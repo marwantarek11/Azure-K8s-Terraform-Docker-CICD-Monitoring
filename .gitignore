@@ -1,0 +1,31 @@
+# Terraform state files contain sensitive data
+*.tfstate
+*.tfstate.*
+
+# Terraform cache and lock files
+.terraform/
+.terraform.lock.hcl
+
+# Kubernetes config (sensitive)
+kube_config
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
