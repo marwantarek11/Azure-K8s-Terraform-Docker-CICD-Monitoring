@@ -50,7 +50,7 @@ kube-prometheus-stack:
           type: prometheus
           url: http://monitoring-kube-prometheus-prometheus:9090
           access: proxy
-          isDefault: true
+          isDefault: false
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
