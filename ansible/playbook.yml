@@ -3,10 +3,13 @@
   hosts: ci_cd_servers
   become: yes
   roles:
-    - sonarqube
-    - jenkins
-    - docker
+      #- sonarqube
+      #- jenkins
+      #- docker
   tasks:
+    - name: Install Helm
+      shell: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
     - name: Display Jenkins IP
       debug:
         msg: "Jenkins server: http://{{ ansible_host }}:8080"
