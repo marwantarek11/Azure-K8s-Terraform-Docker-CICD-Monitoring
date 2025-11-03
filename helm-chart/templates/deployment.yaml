@@ -29,6 +29,24 @@ spec:
             - name: http
               containerPort: 5000
               protocol: TCP
+          {{- if .Values.probe.enabled }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.probe.path }}
+              port: {{ .Values.probe.port }}
+            initialDelaySeconds: {{ .Values.probe.initialDelaySeconds.readiness }}
+            periodSeconds: {{ .Values.probe.periodSeconds }}
+            timeoutSeconds: {{ .Values.probe.timeoutSeconds }}
+            failureThreshold: {{ .Values.probe.failureThreshold }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.probe.path }}
+              port: {{ .Values.probe.port }}
+            initialDelaySeconds: {{ .Values.probe.initialDelaySeconds.liveness }}
+            periodSeconds: {{ .Values.probe.periodSeconds }}
+            timeoutSeconds: {{ .Values.probe.timeoutSeconds }}
+            failureThreshold: {{ .Values.probe.failureThreshold }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
