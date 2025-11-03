@@ -1,3 +1,3 @@
 def call() {
-    sh 'python setup.py build'
+    sh 'python3 setup.py build'
 }
