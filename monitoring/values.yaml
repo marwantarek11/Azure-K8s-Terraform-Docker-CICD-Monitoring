@@ -31,56 +31,53 @@ kube-prometheus-stack:
         service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_my-k8s-rg_my-microservices-aks_westus2
 
   grafana:
-    enabled: false  # Disable built-in Grafana since we use separate Grafana chart
-
-# Grafana configuration
-grafana:
-  adminPassword: admin  # Change this in production
-  service:
-    type: LoadBalancer
-    port: 3000
-    loadBalancerIP: 52.149.54.251
-    annotations:
-      service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_my-k8s-rg_my-microservices-aks_westus2
-  persistence:
-    enabled: true
-    size: 10Gi
-  datasources:
-    datasources.yaml:
-      apiVersion: 1
-      datasources:
-      - name: Prometheus
-        type: prometheus
-        url: http://monitoring-kube-prometheus-prometheus:9090
-        access: proxy
-        isDefault: true
-  dashboardProviders:
-    dashboardproviders.yaml:
-      apiVersion: 1
-      providers:
-      - name: 'default'
-        orgId: 1
-        folder: ''
-        type: file
-        disableDeletion: false
-        updateIntervalSeconds: 10
-        allowUiUpdates: true
-        options:
-          path: /var/lib/grafana/dashboards/default
-  dashboards:
-    default:
-      kubernetes-cluster-monitoring:
-        gnetId: 3119
-        revision: 1
-        datasource: Prometheus
-      node-exporter-full:
-        gnetId: 1860
-        revision: 36
-        datasource: Prometheus
-      prometheus-2-0-overview:
-        gnetId: 3662
-        revision: 2
-        datasource: Prometheus
+    enabled: true  # Enable built-in Grafana
+    adminPassword: admin  # Change this in production
+    service:
+      type: LoadBalancer
+      port: 3000
+      loadBalancerIP: 52.149.54.251
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_my-k8s-rg_my-microservices-aks_westus2
+    persistence:
+      enabled: true
+      size: 10Gi
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+        - name: Prometheus
+          type: prometheus
+          url: http://monitoring-kube-prometheus-prometheus:9090
+          access: proxy
+          isDefault: true
+    dashboardProviders:
+      dashboardproviders.yaml:
+        apiVersion: 1
+        providers:
+        - name: 'default'
+          orgId: 1
+          folder: ''
+          type: file
+          disableDeletion: false
+          updateIntervalSeconds: 10
+          allowUiUpdates: true
+          options:
+            path: /var/lib/grafana/dashboards/default
+    dashboards:
+      default:
+        kubernetes-cluster-monitoring:
+          gnetId: 3119
+          revision: 1
+          datasource: Prometheus
+        node-exporter-full:
+          gnetId: 1860
+          revision: 36
+          datasource: Prometheus
+        prometheus-2-0-overview:
+          gnetId: 3662
+          revision: 2
+          datasource: Prometheus
 
 # ServiceMonitor configuration
 serviceMonitor:

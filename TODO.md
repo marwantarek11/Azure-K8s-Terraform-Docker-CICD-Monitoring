@@ -1,9 +1,7 @@
-# Monitoring Implementation TODO
+# TODO: Switch to Built-in Grafana in kube-prometheus-stack
 
-- [x] Add prometheus_client to requirements.txt
-- [x] Integrate Prometheus metrics in app/__init__.py to expose /metrics endpoint
-- [x] Create monitoring/templates/servicemonitor.yaml for scraping microservice metrics
-- [x] Update monitoring/values.yaml to add servicemonitor configuration
-- [x] Update helm-chart/templates/deployment.yaml to add labels for ServiceMonitor matching
-- [x] Install dependencies and test /metrics endpoint locally
-- [x] Deploy monitoring stack and verify in Grafana
+## Tasks
+- [x] Remove the separate 'grafana' dependency from monitoring/Chart.yaml
+- [x] Update monitoring/values.yaml to enable Grafana under kube-prometheus-stack and move configurations
+- [x] Verify datasource URL in values.yaml for built-in Prometheus service
+- [x] Update Chart.lock after dependency changes (run helm dependency update)
