@@ -23,3 +23,9 @@ sonarqube_service_content: |
   [Install]
   WantedBy=multi-user.target
 sonarqube_service: sonarqube
+sonar_scanner_version: 4.9.3.744
+sonar_scanner_zip_url: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-{{ sonar_scanner_version }}-linux.zip
+sonar_scanner_zip_dest: /tmp/sonar-scanner.zip
+sonar_scanner_extract_dest: /opt/
+sonar_scanner_extracted_dir: sonar-scanner-{{ sonar_scanner_version }}-linux
+sonar_scanner_dir: /opt/sonar-scanner
