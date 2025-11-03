@@ -1,0 +1,30 @@
+java_version: openjdk-17-jdk
+jenkins_user: 'marwan'
+jenkins_password: 'marwan'
+jenkins_fullname: 'marwan tarek'
+jenkins_email: 'marawantarek17@gmail.com'
+jenkins_group: jenkins
+jenkins_home: /var/lib/jenkins
+jenkins_url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+jenkins_repo: deb http://pkg.jenkins.io/debian-stable binary/
+jenkins_service: jenkins
+jenkins_plugins:
+  - workflow-aggregator
+  - credentials
+  - credentials-binding
+  - pipeline
+  - github-branch-source
+  - pipeline-build-step
+  - pipeline-stage-step
+  - pipeline-stage-view
+  - pipeline-utility-steps
+  - workflow-cps-global-lib
+  - pipeline-github-lib
+  - git
+  - github
+  - docker-plugin
+  - sonar
+  - kubernetes
+  - kubernetes-cli
+  - maven-plugin
+  - pipeline-maven

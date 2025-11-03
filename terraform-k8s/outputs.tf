@@ -18,3 +18,24 @@ output "kube_config" {
   value       = module.aks.kube_config
   sensitive   = true
 }
+
+output "vm_public_ip" {
+  description = "Public IP address of the Ubuntu VM"
+  value       = module.vm.vm_public_ip
+}
+
+output "vm_private_ip" {
+  description = "Private IP address of the Ubuntu VM"
+  value       = module.vm.vm_private_ip
+}
+
+output "vm_name" {
+  description = "Name of the Ubuntu VM"
+  value       = module.vm.vm_name
+}
+
+output "vm_ssh_private_key" {
+  description = "Private SSH key for connecting to the VM"
+  value       = module.vm.ssh_private_key
+  sensitive   = true
+}

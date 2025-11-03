@@ -1,6 +1,9 @@
 resource_group_name = "my-k8s-rg"
-location            = "East US"
+location            = "West US 2"
 cluster_name        = "my-microservices-aks"
 node_count          = 1
-vm_size             = "Standard_DC2ads_v5"
-kubernetes_version  = "1.33.0"
+vm_size             = "Standard_B2s"
+kubernetes_version  = "1.33.3"
+vm_name             = "ubuntu-vm-new"
+vm_size_standalone  = "Standard_D2as_v5"
+admin_username      = "azureuser"

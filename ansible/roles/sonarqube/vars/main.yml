@@ -1,0 +1,25 @@
+java_version: openjdk-17-jdk
+sonarqube_user: sonarqube
+sonarqube_zip_url: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.3.0.82913.zip
+sonarqube_zip_dest: /tmp/sonarqube.zip
+sonarqube_extract_dest: /opt/
+sonarqube_dir: /opt/sonarqube
+sonarqube_service_file: /etc/systemd/system/sonarqube.service
+sonarqube_service_content: |
+  [Unit]
+  Description=SonarQube service
+  After=syslog.target network.target
+
+  [Service]
+  Type=forking
+  ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+  ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+  User=sonarqube
+  Group=sonarqube
+  Restart=always
+  LimitNOFILE=65536
+  LimitNPROC=4096
+
+  [Install]
+  WantedBy=multi-user.target
+sonarqube_service: sonarqube
