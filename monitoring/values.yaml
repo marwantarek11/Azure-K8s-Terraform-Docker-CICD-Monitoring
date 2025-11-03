@@ -6,9 +6,8 @@
 kube-prometheus-stack:
   prometheus:
     service:
-      type: NodePort
+      type: LoadBalancer
       port: 9090
-      nodePort: 30090   # You can choose any free NodePort between 30000–32767
     prometheusSpec:
       retention: 30d
       storageSpec:
@@ -21,9 +20,8 @@ kube-prometheus-stack:
   alertmanager:
     enabled: true
     service:
-      type: NodePort
+      type: LoadBalancer
       port: 9093
-      nodePort: 30093   # Optional static NodePort
   grafana:
     enabled: false  # Disable built-in Grafana since we use separate Grafana chart
 
@@ -31,9 +29,8 @@ kube-prometheus-stack:
 grafana:
   adminPassword: admin  # Change this in production
   service:
-    type: NodePort
+    type: LoadBalancer
     port: 3000
-    nodePort: 30300   # Optional static NodePort
   persistence:
     enabled: true
     size: 10Gi
