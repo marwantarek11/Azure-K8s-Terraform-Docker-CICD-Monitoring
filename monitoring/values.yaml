@@ -8,6 +8,9 @@ kube-prometheus-stack:
     service:
       type: LoadBalancer
       port: 9090
+      loadBalancerIP: 52.149.54.251
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_my-k8s-rg_my-microservices-aks_westus2
     prometheusSpec:
       retention: 30d
       storageSpec:
@@ -17,11 +20,16 @@ kube-prometheus-stack:
             resources:
               requests:
                 storage: 50Gi
+
   alertmanager:
     enabled: true
     service:
       type: LoadBalancer
       port: 9093
+      loadBalancerIP: 52.149.54.251
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_my-k8s-rg_my-microservices-aks_westus2
+
   grafana:
     enabled: false  # Disable built-in Grafana since we use separate Grafana chart
 
@@ -31,6 +39,9 @@ grafana:
   service:
     type: LoadBalancer
     port: 3000
+    loadBalancerIP: 52.149.54.251
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_my-k8s-rg_my-microservices-aks_westus2
   persistence:
     enabled: true
     size: 10Gi
