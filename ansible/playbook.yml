@@ -1,0 +1,16 @@
+---
+- name: Setup CI/CD Infrastructure
+  hosts: ci_cd_servers
+  become: yes
+  roles:
+    - sonarqube
+    - jenkins
+    - docker
+  tasks:
+    - name: Display Jenkins IP
+      debug:
+        msg: "Jenkins server: http://{{ ansible_host }}:8080"
+
+    - name: Display sonarqube IP
+      debug:
+        msg: "SonarQube server: http://{{ ansible_host }}:9000 , First time Login Credentials: (user: 'admin', password: 'admin')"

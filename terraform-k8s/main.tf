@@ -27,3 +27,12 @@ module "aks" {
   vm_size             = var.vm_size
   kubernetes_version  = var.kubernetes_version
 }
+
+module "vm" {
+  source              = "./modules/vm"
+  vm_name             = var.vm_name
+  vm_size_standalone  = var.vm_size_standalone
+  admin_username      = var.admin_username
+  location            = module.resource_group.location
+  resource_group_name = module.resource_group.name
+}

@@ -1,0 +1,57 @@
+---
+# Install Java (required for SonarQube)
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Java {{ java_version }}
+  apt:
+    name: "{{ java_version }}"
+    state: present
+
+# Install SonarQube
+- name: Create SonarQube user
+  user:
+    name: "{{ sonarqube_user }}"
+    system: yes
+    shell: /bin/bash
+
+- name: Install unzip
+  apt:
+    name: unzip
+    state: present
+
+- name: Download SonarQube
+  get_url:
+    url: "{{ sonarqube_zip_url }}"
+    dest: "{{ sonarqube_zip_dest }}"
+
+- name: Extract SonarQube
+  unarchive:
+    src: "{{ sonarqube_zip_dest }}"
+    dest: "{{ sonarqube_extract_dest }}"
+    remote_src: yes
+
+- name: Rename SonarQube directory
+  command: mv /opt/sonarqube-10.3.0.82913 "{{ sonarqube_dir }}"
+  args:
+    creates: "{{ sonarqube_dir }}"
+
+- name: Change ownership of SonarQube directory
+  file:
+    path: "{{ sonarqube_dir }}"
+    owner: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_user }}"
+    recurse: yes
+
+- name: Create SonarQube service file
+  copy:
+    dest: "{{ sonarqube_service_file }}"
+    content: "{{ sonarqube_service_content }}"
+
+- name: Start SonarQube service
+  service:
+    name: "{{ sonarqube_service }}"
+    state: started
+    enabled: yes
+    daemon_reload: yes

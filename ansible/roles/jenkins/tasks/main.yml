@@ -1,0 +1,86 @@
+---
+# Install Java (required for Jenkins)
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Java {{ java_version }}
+  apt:
+    name: "{{ java_version }}"
+    state: present
+
+# Install Jenkins
+- name: Add Jenkins apt key
+  apt_key:
+    url: "{{ jenkins_url }}"
+    state: present
+
+- name: Add Jenkins repository
+  apt_repository:
+    repo: "{{ jenkins_repo }}"
+    state: present
+
+- name: Install Jenkins
+  apt:
+    name: "{{ jenkins_service }}"
+    state: present
+    update_cache: yes
+
+- name: Start Jenkins service
+  service:
+    name: "{{ jenkins_service }}"
+    state: started
+    enabled: yes
+
+- name: Add Jenkins password
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: jenkins_initial_password
+
+- name: Create CRUMB authentication request
+  uri:
+    url: 'http://{{ ansible_host }}:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+    user: admin
+    password: '{{ jenkins_initial_password.stdout }}'
+    force_basic_auth: yes
+    return_content: yes
+  register: crumb
+
+- name: Add Jenkins administration account
+  uri:
+    method: POST
+    url: "http://{{ ansible_host }}:8080/securityRealm/createAccountByAdmin"
+    user: admin
+    password: '{{ jenkins_initial_password.stdout }}'
+    force_basic_auth: yes
+    follow_redirects: all
+    headers:
+      Jenkins-Crumb: '{{ crumb.content.split(":")[1] }}'
+      Cookie: '{{ crumb.set_cookie }}'
+    body: 'username={{ jenkins_user }}&password1={{ jenkins_password }}&password2={{ jenkins_password }}&fullname={{ jenkins_fullname }}&email={{ jenkins_email }}'
+
+- name: Install necessary jenkins plugins
+  community.general.jenkins_plugin:
+    name: "{{ item }}"
+    url_username: "{{ jenkins_user }}"
+    url_password: "{{ jenkins_password }}"
+    url: http://{{ ansible_host }}:8080
+    state: latest
+  with_items: "{{ jenkins_plugins }}"
+
+- name: Skip initial setup
+  lineinfile:
+    path: /lib/systemd/system/jenkins.service
+    regexp: '^Environment="JAVA_OPTS=*'
+    line: |
+      Environment="JAVA_OPTS=-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+      Environment="JAVA_ARGS=-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+
+- name: DAEMON_Realod
+  systemd:
+    daemon_reload: true
+
+- name: Restart Jenkins service
+  service:
+    name: Restart Jenkins
+    state: restarted
+    enabled: yes
