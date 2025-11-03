@@ -8,6 +8,9 @@ def call() {
         # Add user bin path so pytest and flask can be found
         export PATH=$PATH:/var/lib/jenkins/.local/bin
 
+        # Add current workspace to PYTHONPATH so 'app' package is discoverable
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
+
         echo "🔹 Running tests..."
         pytest --junitxml=test-results.xml
     '''
