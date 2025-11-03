@@ -70,6 +70,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy Monitoring Stack') {
+            steps {
+                script {
+                    deployMonitoring(kubeconfigCredentialsID, nameSpace, './monitoring')
+                }
+            }
+        }
     }
 
     post {

@@ -20,6 +20,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
         app.kubernetes.io/managed-by: {{ .Release.Service }}
+        app: my-microservice  # Additional label for ServiceMonitor matching
     spec:
       containers:
         - name: {{ .Chart.Name }}
