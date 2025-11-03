@@ -25,5 +25,10 @@ USER appuser
 # Expose the port the app runs on
 EXPOSE 5000
 
+# Flask environment
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
+ENV FLASK_ENV=production
+
 # Command to run the application
 CMD ["python", "run.py"]
