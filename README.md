@@ -155,16 +155,16 @@ microservices-cicd/
 
 ### Required Tools
 
-| Tool | Version | Purpose |
-|------|---------|---------|
-| **Terraform** | 1.0+ | Infrastructure provisioning |
-| **Azure CLI** | 2.0+ | Azure authentication |
-| **Ansible** | 2.9+ | Configuration management |
-| **Docker** | 20.10+ | Containerization |
-| **Helm** | 3.0+ | Kubernetes package management |
-| **kubectl** | 1.19+ | Kubernetes cluster interaction |
-| **Python** | 3.8+ | Application development |
-| **Git** | 2.0+ | Version control |
+| Tool | Purpose |
+|------|---------|
+| **Terraform** | Infrastructure provisioning |
+| **Azure CLI** | Azure authentication |
+| **Ansible** |  Configuration management |
+| **Docker** |  Containerization |
+| **Helm** |  Kubernetes package management |
+| **kubectl** |  Kubernetes cluster interaction |
+| **Python** |  Application development |
+| **Git** | Version control |
 
 ### Azure Requirements
 
