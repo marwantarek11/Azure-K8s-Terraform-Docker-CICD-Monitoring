@@ -50,37 +50,30 @@ This project implements a complete DevOps pipeline for microservices deployment 
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        Azure Cloud                                      │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │                    Resource Group                                 │  │
-│  │  ┌─────────────────┐    ┌─────────────────────────────────────┐   │  │
-│  │  │   AKS Cluster   │    │         CI/CD VM (Ubuntu)           │   │  │
-│  │  │                 │    │  ┌─────────────────┐                │   │  │
-│  │  │ • Control Plane │    │  │   Jenkins       │  (8080)        │   │  │
-│  │  │ • Node Pools    │    │  │   • Pipelines   │                │   │  │
-│  │  │ • Load Balancer │    │  │   • Shared Lib  │                │   │  │
-│  │  │ • Auto-scaling  │    │  └─────────────────┘                │   │  │
-│  │  │                 │    │  ┌─────────────────┐                │   │  │
-│  │  │  Microservice   │    │  │   SonarQube     │  (9000)        │   │  │
-│  │  │  Deployment     │    │  │   • Code Quality│                │   │  │
-│  │  │  • Flask API    │    │  │   • Analysis    │                │   │  │
-│  │  │  • Prometheus   │    │  └─────────────────┘                │   │  │
-│  │  │  • Health Checks│    │  ┌─────────────────┐                │   │  │
-│  │  │                 │    │  │   Docker        │                │   │  │
-│  │  └─────────────────┘    │  │   • Build/Push  │                │   │  │
-│  │                         │  └─────────────────┘                │   │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │                    Monitoring Stack                               │  │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                │  │
-│  │  │ Prometheus  │  │   Grafana   │  │ Alertmanager│                │  │
-│  │  │ 9090        │  │ 3000        │  │ 9093        │                │  │
-│  │  └─────────────┘  └─────────────┘  └─────────────┘                │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+![Azure Kubernetes Microservices CI/CD Architecture](architecture-diagram.svg)
+
+### Architecture Overview
+
+The architecture consists of two main components deployed in Microsoft Azure:
+
+#### **AKS Cluster (Left Side)**
+- **Control Plane & Node Pools**: Managed Kubernetes control plane with auto-scaling node pools
+- **Microservice Deployment**: Flask-based REST API with Prometheus metrics and health checks
+- **Monitoring Stack**: Prometheus, Grafana, and Alertmanager for comprehensive observability
+
+#### **CI/CD VM (Right Side)**
+- **Jenkins**: CI/CD server with pipeline automation and shared library
+- **SonarQube**: Code quality analysis and static code analysis
+- **Docker**: Container build and registry push capabilities
+- **Git Repository**: Source code and Infrastructure as Code templates
+- **Terraform & Ansible**: Infrastructure provisioning and configuration management
+
+#### **Data Flow**
+- **Deploy**: Jenkins pipelines deploy applications to AKS
+- **Monitor**: Prometheus collects metrics from applications and infrastructure
+- **Provision**: Terraform creates Azure resources, Ansible configures CI/CD tools
+- **Build**: Docker containers are built and pushed to registries
+- **Quality**: SonarQube analyzes code quality before deployment
 
 ## Project Structure
 
