@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">
+    Azure Kubernetes Microservices CI/CD Architecture
+  </text>
+
+  <!-- Azure Cloud Box -->
+  <rect x="50" y="60" width="1100" height="680" fill="#0078D4" stroke="#005A9E" stroke-width="3" rx="10"/>
+  <text x="600" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    Microsoft Azure Cloud
+  </text>
+
+  <!-- Resource Group -->
+  <rect x="100" y="120" width="1000" height="600" fill="#E6F3FF" stroke="#0078D4" stroke-width="2" rx="5"/>
+  <text x="600" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0078D4">
+    Resource Group (microservices-rg)
+  </text>
+
+  <!-- AKS Cluster -->
+  <rect x="150" y="180" width="400" height="500" fill="#FFF" stroke="#0078D4" stroke-width="2" rx="5"/>
+  <text x="350" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0078D4">
+    Azure Kubernetes Service (AKS)
+  </text>
+
+  <!-- AKS Components -->
+  <rect x="180" y="230" width="340" height="60" fill="#F0F8FF" stroke="#0078D4" stroke-width="1" rx="3"/>
+  <text x="350" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Control Plane &amp; Node Pools
+  </text>
+  <text x="350" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Auto-scaling, Load Balancer, RBAC
+  </text>
+
+  <!-- Microservice Deployment -->
+  <rect x="180" y="310" width="340" height="120" fill="#FFF" stroke="#0078D4" stroke-width="2" rx="3"/>
+  <text x="350" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    Microservice Deployment
+  </text>
+  <text x="350" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Flask API Application
+  </text>
+  <text x="350" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • RESTful Endpoints (/users, /products)
+  </text>
+  <text x="350" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Prometheus Metrics (/metrics)
+  </text>
+  <text x="350" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Health Checks (/health)
+  </text>
+  <text x="350" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    LoadBalancer Service (Port 5000)
+  </text>
+
+  <!-- Monitoring Stack -->
+  <rect x="180" y="450" width="340" height="200" fill="#FFF" stroke="#0078D4" stroke-width="2" rx="3"/>
+  <text x="350" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    Monitoring Stack (kube-prometheus-stack)
+  </text>
+
+  <!-- Prometheus -->
+  <rect x="200" y="485" width="80" height="50" fill="#E6F3FF" stroke="#0078D4" stroke-width="1" rx="3"/>
+  <text x="240" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0078D4">
+    Prometheus
+  </text>
+  <text x="240" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    Port 9090
+  </text>
+  <text x="240" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    Metrics Collection
+  </text>
+
+  <!-- Grafana -->
+  <rect x="300" y="485" width="80" height="50" fill="#E6F3FF" stroke="#0078D4" stroke-width="1" rx="3"/>
+  <text x="340" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0078D4">
+    Grafana
+  </text>
+  <text x="340" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    Port 3000
+  </text>
+  <text x="340" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    Dashboards
+  </text>
+
+  <!-- Alertmanager -->
+  <rect x="400" y="485" width="80" height="50" fill="#E6F3FF" stroke="#0078D4" stroke-width="1" rx="3"/>
+  <text x="440" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0078D4">
+    Alertmanager
+  </text>
+  <text x="440" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    Port 9093
+  </text>
+  <text x="440" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    Alert Routing
+  </text>
+
+  <!-- ServiceMonitor -->
+  <rect x="200" y="550" width="280" height="30" fill="#F0F8FF" stroke="#0078D4" stroke-width="1" rx="3"/>
+  <text x="340" y="568" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    ServiceMonitor: Auto-discovery of /metrics endpoints
+  </text>
+
+  <!-- Node Exporter & kube-state-metrics -->
+  <rect x="200" y="590" width="280" height="30" fill="#F0F8FF" stroke="#0078D4" stroke-width="1" rx="3"/>
+  <text x="340" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Node Exporter &amp; kube-state-metrics: System &amp; K8s metrics
+  </text>
+
+  <!-- CI/CD VM -->
+  <rect x="600" y="180" width="400" height="500" fill="#FFF" stroke="#0078D4" stroke-width="2" rx="3"/>
+  <text x="800" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0078D4">
+    CI/CD Virtual Machine (Ubuntu)
+  </text>
+
+  <!-- Jenkins -->
+  <rect x="630" y="230" width="140" height="80" fill="#FFF3CD" stroke="#856404" stroke-width="2" rx="3"/>
+  <text x="700" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#856404">
+    Jenkins
+  </text>
+  <text x="700" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Port 8080
+  </text>
+  <text x="700" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Pipeline Jobs
+  </text>
+  <text x="700" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Shared Library
+  </text>
+
+  <!-- SonarQube -->
+  <rect x="790" y="230" width="140" height="80" fill="#D1ECF1" stroke="#0C5460" stroke-width="2" rx="3"/>
+  <text x="860" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0C5460">
+    SonarQube
+  </text>
+  <text x="860" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Port 9000
+  </text>
+  <text x="860" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Code Quality
+  </text>
+  <text x="860" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Static Analysis
+  </text>
+
+  <!-- Docker -->
+  <rect x="630" y="330" width="300" height="60" fill="#D4EDDA" stroke="#155724" stroke-width="2" rx="3"/>
+  <text x="780" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#155724">
+    Docker
+  </text>
+  <text x="780" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Container Builds
+  </text>
+  <text x="780" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Image Registry Push
+  </text>
+
+  <!-- Git/Version Control -->
+  <rect x="630" y="410" width="300" height="50" fill="#F8F9FA" stroke="#6C757D" stroke-width="2" rx="3"/>
+  <text x="780" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#6C757D">
+    Git Repository
+  </text>
+  <text x="780" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Source Code &amp; IaC Templates
+  </text>
+
+  <!-- Terraform & Ansible -->
+  <rect x="630" y="480" width="140" height="80" fill="#E2E3E5" stroke="#383D41" stroke-width="2" rx="3"/>
+  <text x="700" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#383D41">
+    Terraform
+  </text>
+  <text x="700" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Infrastructure
+  </text>
+  <text x="700" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    as Code
+  </text>
+
+  <rect x="790" y="480" width="140" height="80" fill="#E2E3E5" stroke="#383D41" stroke-width="2" rx="3"/>
+  <text x="860" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#383D41">
+    Ansible
+  </text>
+  <text x="860" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Configuration
+  </text>
+  <text x="860" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Management
+  </text>
+
+  <!-- Flow Arrows -->
+  <!-- Jenkins to AKS -->
+  <line x1="700" y1="310" x2="550" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="580" y="395" font-family="Arial, sans-serif" font-size="10" fill="#666">Deploy</text>
+
+  <!-- Docker to Registry -->
+  <line x1="780" y1="390" x2="780" y2="410" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="790" y="405" font-family="Arial, sans-serif" font-size="10" fill="#666">Push</text>
+
+  <!-- Git to Jenkins -->
+  <line x1="780" y1="460" x2="780" y2="480" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="790" y="475" font-family="Arial, sans-serif" font-size="10" fill="#666">Pull</text>
+
+  <!-- Terraform to Azure -->
+  <line x1="700" y1="560" x2="550" y2="500" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="580" y="495" font-family="Arial, sans-serif" font-size="10" fill="#666">Provision</text>
+
+  <!-- Ansible to VM -->
+  <line x1="860" y1="560" x2="950" y2="500" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="920" y="495" font-family="Arial, sans-serif" font-size="10" fill="#666">Configure</text>
+
+  <!-- Monitoring to Application -->
+  <line x1="520" y1="400" x2="600" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="540" y="395" font-family="Arial, sans-serif" font-size="10" fill="#666">Monitor</text>
+
+  <!-- Legend -->
+  <rect x="100" y="700" width="1000" height="60" fill="#F8F9FA" stroke="#DEE2E6" stroke-width="1" rx="3"/>
+  <text x="150" y="720" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Legend:</text>
+  <rect x="200" y="705" width="15" height="15" fill="#0078D4" stroke="#005A9E" stroke-width="1"/>
+  <text x="225" y="718" font-family="Arial, sans-serif" font-size="10" fill="#333">Azure Resources</text>
+  <rect x="320" y="705" width="15" height="15" fill="#FFF" stroke="#0078D4" stroke-width="1"/>
+  <text x="345" y="718" font-family="Arial, sans-serif" font-size="10" fill="#333">Kubernetes Components</text>
+  <rect x="480" y="705" width="15" height="15" fill="#FFF3CD" stroke="#856404" stroke-width="1"/>
+  <text x="505" y="718" font-family="Arial, sans-serif" font-size="10" fill="#333">CI/CD Tools</text>
+  <rect x="600" y="705" width="15" height="15" fill="#D4EDDA" stroke="#155724" stroke-width="1"/>
+  <text x="625" y="718" font-family="Arial, sans-serif" font-size="10" fill="#333">Container Tools</text>
+  <rect x="720" y="705" width="15" height="15" fill="#E2E3E5" stroke="#383D41" stroke-width="1"/>
+  <text x="745" y="718" font-family="Arial, sans-serif" font-size="10" fill="#333">IaC Tools</text>
+</svg>
