@@ -1,11 +1,11 @@
 # Azure Kubernetes Microservices CI/CD Pipeline
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Terraform](https://img.shields.io/badge/Terraform-1.0+-623CE4.svg)](https://www.terraform.io/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-1.19+-326ce5.svg)](https://kubernetes.io/)
-[![Docker](https://img.shields.io/badge/Docker-20.10+-2496ED.svg)](https://www.docker.com/)
-[![Helm](https://img.shields.io/badge/Helm-3.0+-0F1689.svg)](https://helm.sh/)
-[![Jenkins](https://img.shields.io/badge/Jenkins-2.0+-D24939.svg)](https://jenkins.io/)
+[![Terraform](https://img.shields.io/badge/Terraform-623CE4.svg)](https://www.terraform.io/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326ce5.svg)](https://kubernetes.io/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED.svg)](https://www.docker.com/)
+[![Helm](https://img.shields.io/badge/Helm-0F1689.svg)](https://helm.sh/)
+[![Jenkins](https://img.shields.io/badge/Jenkins-D24939.svg)](https://jenkins.io/)
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C.svg)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/Grafana-F46800.svg)](https://grafana.com/)
 
@@ -51,35 +51,35 @@ This project implements a complete DevOps pipeline for microservices deployment 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        Azure Cloud                                  │
-│  ┌─────────────────────────────────────────────────────────────────┐  │
-│  │                    Resource Group                               │  │
-│  │  ┌─────────────────┐    ┌─────────────────────────────────────┐  │  │
-│  │  │   AKS Cluster   │    │         CI/CD VM (Ubuntu)           │  │  │
-│  │  │                 │    │  ┌─────────────────┐                │  │  │
-│  │  │ • Control Plane │    │  │   Jenkins       │  (8080)        │  │  │
-│  │  │ • Node Pools    │    │  │   • Pipelines   │                │  │  │
-│  │  │ • Load Balancer │    │  │   • Shared Lib  │                │  │  │
-│  │  │ • Auto-scaling  │    │  └─────────────────┘                │  │  │
-│  │  │                 │    │  ┌─────────────────┐                │  │  │
-│  │  │  Microservice   │    │  │   SonarQube     │  (9000)        │  │  │
-│  │  │  Deployment     │    │  │   • Code Quality│                │  │  │
-│  │  │  • Flask API    │    │  │   • Analysis    │                │  │  │
-│  │  │  • Prometheus   │    │  └─────────────────┘                │  │  │
-│  │  │  • Health Checks│    │  ┌─────────────────┐                │  │  │
-│  │  │                 │    │  │   Docker        │                │  │  │
-│  │  └─────────────────┘    │  │   • Build/Push  │                │  │  │
-│  │                         │  └─────────────────┘                │  │  │
-│  └─────────────────────────────────────────────────────────────────┘  │
-│  ┌─────────────────────────────────────────────────────────────────┐  │
-│  │                    Monitoring Stack                             │  │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │  │
-│  │  │ Prometheus  │  │   Grafana   │  │ Alertmanager│             │  │
-│  │  │ 9090        │  │ 3000        │  │ 9093        │             │  │
-│  │  └─────────────┘  └─────────────┘  └─────────────┘             │  │
-│  └─────────────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        Azure Cloud                                      │
+│  ┌───────────────────────────────────────────────────────────────────┐  │
+│  │                    Resource Group                                 │  │
+│  │  ┌─────────────────┐    ┌─────────────────────────────────────┐   │  │
+│  │  │   AKS Cluster   │    │         CI/CD VM (Ubuntu)           │   │  │
+│  │  │                 │    │  ┌─────────────────┐                │   │  │
+│  │  │ • Control Plane │    │  │   Jenkins       │  (8080)        │   │  │
+│  │  │ • Node Pools    │    │  │   • Pipelines   │                │   │  │
+│  │  │ • Load Balancer │    │  │   • Shared Lib  │                │   │  │
+│  │  │ • Auto-scaling  │    │  └─────────────────┘                │   │  │
+│  │  │                 │    │  ┌─────────────────┐                │   │  │
+│  │  │  Microservice   │    │  │   SonarQube     │  (9000)        │   │  │
+│  │  │  Deployment     │    │  │   • Code Quality│                │   │  │
+│  │  │  • Flask API    │    │  │   • Analysis    │                │   │  │
+│  │  │  • Prometheus   │    │  └─────────────────┘                │   │  │
+│  │  │  • Health Checks│    │  ┌─────────────────┐                │   │  │
+│  │  │                 │    │  │   Docker        │                │   │  │
+│  │  └─────────────────┘    │  │   • Build/Push  │                │   │  │
+│  │                         │  └─────────────────┘                │   │  │
+│  └───────────────────────────────────────────────────────────────────┘  │
+│  ┌───────────────────────────────────────────────────────────────────┐  │
+│  │                    Monitoring Stack                               │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                │  │
+│  │  │ Prometheus  │  │   Grafana   │  │ Alertmanager│                │  │
+│  │  │ 9090        │  │ 3000        │  │ 9093        │                │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘                │  │
+│  └───────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Project Structure
