@@ -54,19 +54,23 @@ This project implements a complete DevOps pipeline for microservices deployment 
 
 ### Architecture Overview
 
-The architecture consists of two main components deployed in Microsoft Azure:
+The diagram reads top to bottom: a commit triggers the CI/CD pipeline, which builds and deploys onto the AKS cluster, which in turn runs on infrastructure that Terraform and Ansible provisioned and configured.
 
-#### **AKS Cluster (Left Side)**
-- **Control Plane & Node Pools**: Managed Kubernetes control plane with auto-scaling node pools
-- **Microservice Deployment**: Flask-based REST API with Prometheus metrics and health checks
-- **Monitoring Stack**: Prometheus, Grafana, and Alertmanager for comprehensive observability
-
-#### **CI/CD VM (Right Side)**
-- **Jenkins**: CI/CD server with pipeline automation and shared library
+#### **CI/CD Pipeline (Top)**
+- **GitHub**: Source repository for the app, Terraform, Ansible, and Helm chart; a webhook triggers Jenkins on every push
+- **Jenkins**: CI/CD server with pipeline automation and shared library — checkout, unit test, build, SonarQube scan, Docker build, push image
 - **SonarQube**: Code quality analysis and static code analysis
-- **Docker**: Container build and registry push capabilities
-- **Git Repository**: Source code and Infrastructure as Code templates
-- **Terraform & Ansible**: Infrastructure provisioning and configuration management
+- **Docker / Container Registry**: Image build and push to Docker Hub
+
+#### **AKS Cluster (Middle)**
+- **Control Plane & Node Pools**: Managed Kubernetes control plane with auto-scaling node pools
+- **Flask Microservice**: REST API with Prometheus metrics and health checks, deployed via Helm behind a LoadBalancer service
+- **Observability**: Prometheus, Grafana, and Alertmanager for comprehensive monitoring, with ServiceMonitor auto-discovering the app's `/metrics` endpoint
+
+#### **Azure Infrastructure, Deployment Strategy & Pipeline Credentials (Bottom)**
+- **Azure Infrastructure**: AKS, the resource group, VNet/NSG, and Azure AD — provisioned by Terraform and configured by Ansible
+- **Deployment Strategy**: Rolling updates, health checks, and resource limits applied on every Helm release
+- **Pipeline Credentials**: The Jenkins credentials the pipeline depends on — Docker Hub, kubeconfig, and the SonarQube token
 
 #### **Data Flow**
 - **Deploy**: Jenkins pipelines deploy applications to AKS
