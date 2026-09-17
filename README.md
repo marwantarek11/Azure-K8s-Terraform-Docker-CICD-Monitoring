@@ -52,7 +52,7 @@ This project implements a complete DevOps pipeline for microservices deployment 
 
 ![Azure Kubernetes Microservices CI/CD Architecture (animated)](architecture-animated.svg)
 
-Every stage lights up in the order it actually runs in `Jenkinsfile`, and every value on the diagram (K8s version, VM size, replica count, resource limits, scrape interval, retention) is read from this repo's own Terraform, Helm, and monitoring configs — not a template. If your viewer doesn't render inline SVG animation (some link previews and editors don't), the static version below is the fallback.
+Every stage lights up in the order it actually runs in `Jenkinsfile`, and every value on the diagram (K8s version, VM size, replica count, resource limits, scrape interval, retention) is read from this repo's own Terraform, Helm, and monitoring configs — not a template. Nodes carry the real tool icons (Terraform, Ansible, GitHub, Docker, Helm, Kubernetes) grouped into four color-coded phases — provisioning, CI/CD, registry, and observability — with a legend at the bottom. If your viewer doesn't render inline SVG animation (some link previews and editors don't), the static version below is the fallback.
 
 ![Azure Kubernetes Microservices CI/CD Architecture](architecture-diagram.svg)
 
