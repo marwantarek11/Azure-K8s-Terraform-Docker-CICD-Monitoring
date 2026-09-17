@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: my-microservice-app
+  repository: marwantarek11/microservice-app
   tag: "latest"
   pullPolicy: IfNotPresent
 
