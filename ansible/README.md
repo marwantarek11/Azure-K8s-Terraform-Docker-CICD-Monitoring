@@ -29,7 +29,8 @@ ansible/
     │   ├── tasks/
     │   │   └── main.yml       # Jenkins installation and configuration tasks
     │   └── vars/
-    │       └── main.yml       # Jenkins configuration variables
+    │       ├── main.yml       # Jenkins configuration variables (non-secret)
+    │       └── vault.yml      # ansible-vault encrypted: admin user/password/email
     └── sonarqube/
         ├── handlers/
         │   └── main.yml       # SonarQube service restart handler
@@ -122,7 +123,20 @@ ansible-playbook -i inventory.azure_rm.yml playbook.yml
 
 Or using static inventory:
 ```bash
-ansible-playbook -i inventory.ini playbook.yml
+ansible-playbook -i inventory.ini playbook.yml --ask-vault-pass
+```
+
+The Jenkins admin credentials (`vault_jenkins_user`, `vault_jenkins_password`, `vault_jenkins_fullname`, `vault_jenkins_email`) live encrypted in `roles/jenkins/vars/vault.yml` and are loaded by an `include_vars` task at the start of that role. You need the vault password to run the playbook — either type it interactively with `--ask-vault-pass`, or store it in a local file (never commit it) and pass `--vault-password-file /path/to/file`.
+
+To view or edit the secrets:
+```bash
+ansible-vault view roles/jenkins/vars/vault.yml
+ansible-vault edit roles/jenkins/vars/vault.yml
+```
+
+To rotate the vault password itself:
+```bash
+ansible-vault rekey roles/jenkins/vars/vault.yml
 ```
 
 ## Roles and Components
@@ -161,10 +175,10 @@ ansible-playbook -i inventory.ini playbook.yml
   - Restarts Jenkins service
 - **Variables**:
   - `java_version`: Java version to install
-  - `jenkins_user`: Jenkins admin username
-  - `jenkins_password`: Jenkins admin password
-  - `jenkins_fullname`: Jenkins admin full name
-  - `jenkins_email`: Jenkins admin email
+  - `jenkins_user`: Jenkins admin username (from vaulted `vault_jenkins_user`)
+  - `jenkins_password`: Jenkins admin password (from vaulted `vault_jenkins_password`)
+  - `jenkins_fullname`: Jenkins admin full name (from vaulted `vault_jenkins_fullname`)
+  - `jenkins_email`: Jenkins admin email (from vaulted `vault_jenkins_email`)
   - `jenkins_plugins`: List of plugins to install
 - **Installed Plugins**:
   - `workflow-aggregator`

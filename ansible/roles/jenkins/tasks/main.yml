@@ -1,4 +1,7 @@
 ---
+- name: Include vaulted secrets
+  include_vars: vault.yml
+
 # Install Java (required for Jenkins)
 - name: Update apt cache
   apt:

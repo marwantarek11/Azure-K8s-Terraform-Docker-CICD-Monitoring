@@ -9,6 +9,11 @@
 # Kubernetes config (sensitive)
 kube_config
 
+# Ansible Vault password (never commit this)
+.vault_pass
+ansible/.vault_pass
+vault_pass.txt
+
 # Python
 __pycache__/
 *.pyc
