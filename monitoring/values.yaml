@@ -2,6 +2,12 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Release name the app's Helm chart is installed under (see deployOnAks.groovy:
+# `helm upgrade --install my-microservice`). The ServiceMonitor selector needs
+# this to find the app's Service/Pod labels, since it's a different release
+# from this monitoring chart's own .Release.Name.
+appInstance: my-microservice
+
 # Prometheus configuration
 kube-prometheus-stack:
   prometheus:

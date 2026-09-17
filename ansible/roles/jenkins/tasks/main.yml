@@ -81,6 +81,6 @@
 
 - name: Restart Jenkins service
   service:
-    name: Restart Jenkins
+    name: "{{ jenkins_service }}"
     state: restarted
     enabled: yes
