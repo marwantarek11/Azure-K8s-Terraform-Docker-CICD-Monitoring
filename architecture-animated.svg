@@ -1,0 +1,328 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1820 820" width="1820" height="820">
+<rect width="1820" height="820" fill="#0b1220"/>
+<style>
+  .lbl { font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif; fill:#e2e8f0; }
+  .lbl-sm { font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif; fill:#94a3b8; font-size:12px; }
+  .lbl-title { font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif; fill:#f8fafc; font-weight:600; }
+  .box { fill:#1e293b; stroke:#334155; stroke-width:2; }
+  .chip { fill:#0f172a; stroke:#334155; stroke-width:1.5; }
+  .arrow { stroke-width:2.5; fill:none; }
+  .arrowhead { }
+  @keyframes seq_tf {
+  0% { opacity: 0.22; filter: none; }
+  0.0% { opacity: 0.22; filter: none; }
+  2.0% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_tf_vm {
+  0% { opacity: 0.22; filter: none; }
+  3.0% { opacity: 0.22; filter: none; }
+  5.0% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_vm {
+  0% { opacity: 0.22; filter: none; }
+  6.1% { opacity: 0.22; filter: none; }
+  8.1% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_vm_aksinfra {
+  0% { opacity: 0.22; filter: none; }
+  9.1% { opacity: 0.22; filter: none; }
+  11.1% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_aksinfra {
+  0% { opacity: 0.22; filter: none; }
+  12.1% { opacity: 0.22; filter: none; }
+  14.1% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #22d3ee); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_gh {
+  0% { opacity: 0.22; filter: none; }
+  15.2% { opacity: 0.22; filter: none; }
+  17.2% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_gh_jenkins {
+  0% { opacity: 0.22; filter: none; }
+  18.2% { opacity: 0.22; filter: none; }
+  20.2% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_jenkins {
+  0% { opacity: 0.22; filter: none; }
+  21.2% { opacity: 0.22; filter: none; }
+  23.2% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j1 {
+  0% { opacity: 0.22; filter: none; }
+  24.3% { opacity: 0.22; filter: none; }
+  26.3% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j2 {
+  0% { opacity: 0.22; filter: none; }
+  27.3% { opacity: 0.22; filter: none; }
+  29.3% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j3 {
+  0% { opacity: 0.22; filter: none; }
+  30.3% { opacity: 0.22; filter: none; }
+  32.3% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j4 {
+  0% { opacity: 0.22; filter: none; }
+  33.4% { opacity: 0.22; filter: none; }
+  35.4% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j5 {
+  0% { opacity: 0.22; filter: none; }
+  36.4% { opacity: 0.22; filter: none; }
+  38.4% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j6 {
+  0% { opacity: 0.22; filter: none; }
+  39.4% { opacity: 0.22; filter: none; }
+  41.4% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j7 {
+  0% { opacity: 0.22; filter: none; }
+  42.5% { opacity: 0.22; filter: none; }
+  44.5% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_j8 {
+  0% { opacity: 0.22; filter: none; }
+  45.5% { opacity: 0.22; filter: none; }
+  47.5% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #4ade80); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_jenkins_docker {
+  0% { opacity: 0.22; filter: none; }
+  48.6% { opacity: 0.22; filter: none; }
+  50.6% { opacity: 1; filter: drop-shadow(0 0 6px #fbbf24); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #fbbf24); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_docker {
+  0% { opacity: 0.22; filter: none; }
+  51.6% { opacity: 0.22; filter: none; }
+  53.6% { opacity: 1; filter: drop-shadow(0 0 6px #fbbf24); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #fbbf24); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_docker_helm {
+  0% { opacity: 0.22; filter: none; }
+  54.6% { opacity: 0.22; filter: none; }
+  56.6% { opacity: 1; filter: drop-shadow(0 0 6px #fbbf24); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #fbbf24); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_helm {
+  0% { opacity: 0.22; filter: none; }
+  57.7% { opacity: 0.22; filter: none; }
+  59.7% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_helm_aks {
+  0% { opacity: 0.22; filter: none; }
+  60.7% { opacity: 0.22; filter: none; }
+  62.7% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_aksapp {
+  0% { opacity: 0.22; filter: none; }
+  63.7% { opacity: 0.22; filter: none; }
+  65.7% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_aks_sm {
+  0% { opacity: 0.22; filter: none; }
+  66.8% { opacity: 0.22; filter: none; }
+  68.8% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #a78bfa); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_sm {
+  0% { opacity: 0.22; filter: none; }
+  69.8% { opacity: 0.22; filter: none; }
+  71.8% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_sm_prom {
+  0% { opacity: 0.22; filter: none; }
+  72.8% { opacity: 0.22; filter: none; }
+  74.8% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_prom {
+  0% { opacity: 0.22; filter: none; }
+  75.9% { opacity: 0.22; filter: none; }
+  77.9% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_prom_graf {
+  0% { opacity: 0.22; filter: none; }
+  78.9% { opacity: 0.22; filter: none; }
+  80.9% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_graf {
+  0% { opacity: 0.22; filter: none; }
+  81.9% { opacity: 0.22; filter: none; }
+  83.9% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_arrow_prom_alert {
+  0% { opacity: 0.22; filter: none; }
+  85.0% { opacity: 0.22; filter: none; }
+  87.0% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+@keyframes seq_alert {
+  0% { opacity: 0.22; filter: none; }
+  88.0% { opacity: 0.22; filter: none; }
+  90.0% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  94% { opacity: 1; filter: drop-shadow(0 0 6px #f472b6); }
+  100% { opacity: 0.22; filter: none; }
+}
+  .seq-tf { animation: seq_tf 18s ease-in-out infinite; }
+.seq-arrow_tf_vm { animation: seq_arrow_tf_vm 18s ease-in-out infinite; }
+.seq-vm { animation: seq_vm 18s ease-in-out infinite; }
+.seq-arrow_vm_aksinfra { animation: seq_arrow_vm_aksinfra 18s ease-in-out infinite; }
+.seq-aksinfra { animation: seq_aksinfra 18s ease-in-out infinite; }
+.seq-gh { animation: seq_gh 18s ease-in-out infinite; }
+.seq-arrow_gh_jenkins { animation: seq_arrow_gh_jenkins 18s ease-in-out infinite; }
+.seq-jenkins { animation: seq_jenkins 18s ease-in-out infinite; }
+.seq-j1 { animation: seq_j1 18s ease-in-out infinite; }
+.seq-j2 { animation: seq_j2 18s ease-in-out infinite; }
+.seq-j3 { animation: seq_j3 18s ease-in-out infinite; }
+.seq-j4 { animation: seq_j4 18s ease-in-out infinite; }
+.seq-j5 { animation: seq_j5 18s ease-in-out infinite; }
+.seq-j6 { animation: seq_j6 18s ease-in-out infinite; }
+.seq-j7 { animation: seq_j7 18s ease-in-out infinite; }
+.seq-j8 { animation: seq_j8 18s ease-in-out infinite; }
+.seq-arrow_jenkins_docker { animation: seq_arrow_jenkins_docker 18s ease-in-out infinite; }
+.seq-docker { animation: seq_docker 18s ease-in-out infinite; }
+.seq-arrow_docker_helm { animation: seq_arrow_docker_helm 18s ease-in-out infinite; }
+.seq-helm { animation: seq_helm 18s ease-in-out infinite; }
+.seq-arrow_helm_aks { animation: seq_arrow_helm_aks 18s ease-in-out infinite; }
+.seq-aksapp { animation: seq_aksapp 18s ease-in-out infinite; }
+.seq-arrow_aks_sm { animation: seq_arrow_aks_sm 18s ease-in-out infinite; }
+.seq-sm { animation: seq_sm 18s ease-in-out infinite; }
+.seq-arrow_sm_prom { animation: seq_arrow_sm_prom 18s ease-in-out infinite; }
+.seq-prom { animation: seq_prom 18s ease-in-out infinite; }
+.seq-arrow_prom_graf { animation: seq_arrow_prom_graf 18s ease-in-out infinite; }
+.seq-graf { animation: seq_graf 18s ease-in-out infinite; }
+.seq-arrow_prom_alert { animation: seq_arrow_prom_alert 18s ease-in-out infinite; }
+.seq-alert { animation: seq_alert 18s ease-in-out infinite; }
+</style>
+<g class="seq-tf"><rect x="80" y="40" width="220" height="70" rx="10" class="box"/><text x="190" y="72" class="lbl-title" font-size="16" text-anchor="middle">Terraform</text><text x="190" y="95" class="lbl-sm" font-size="14" text-anchor="middle">AKS + Resource Group + VM</text></g>
+<g class="seq-arrow_tf_vm">
+<line x1="300" y1="75" x2="358" y2="75" stroke="#22d3ee" class="arrow"/>
+<line x1="358" y1="75" x2="348.8" y2="78.9" stroke="#22d3ee" stroke-width="2.5"/>
+<line x1="358" y1="75" x2="348.8" y2="71.1" stroke="#22d3ee" stroke-width="2.5"/>
+</g>
+<g class="seq-vm"><rect x="360" y="40" width="220" height="70" rx="10" class="box"/><text x="470" y="68" class="lbl-title" font-size="15" text-anchor="middle">Ansible → CI VM</text><text x="470" y="90" class="lbl-sm" font-size="14" text-anchor="middle">Standard_D2as_v5 · installs Helm</text></g>
+<g class="seq-arrow_vm_aksinfra">
+<line x1="580" y1="75" x2="900" y2="75" stroke="#22d3ee" class="arrow"/>
+<line x1="900" y1="75" x2="890.8" y2="78.9" stroke="#22d3ee" stroke-width="2.5"/>
+<line x1="900" y1="75" x2="890.8" y2="71.1" stroke="#22d3ee" stroke-width="2.5"/>
+</g>
+<g class="seq-arrow_vm_aksinfra">
+<line x1="900" y1="75" x2="1470" y2="165" stroke="#22d3ee" class="arrow" stroke-dasharray="6 4"/>
+<line x1="1470" y1="165" x2="1460.3" y2="167.4" stroke="#22d3ee" stroke-width="2.5"/>
+<line x1="1470" y1="165" x2="1461.5" y2="159.7" stroke="#22d3ee" stroke-width="2.5"/>
+</g>
+<g class="seq-gh"><rect x="80" y="220" width="180" height="70" rx="10" class="box"/><text x="170" y="252" class="lbl-title" font-size="16" text-anchor="middle">GitHub</text><text x="170" y="275" class="lbl-sm" font-size="14" text-anchor="middle">push triggers webhook</text></g>
+<g class="seq-arrow_gh_jenkins">
+<line x1="260" y1="255" x2="318" y2="255" stroke="#4ade80" class="arrow"/>
+<line x1="318" y1="255" x2="308.8" y2="258.9" stroke="#4ade80" stroke-width="2.5"/>
+<line x1="318" y1="255" x2="308.8" y2="251.1" stroke="#4ade80" stroke-width="2.5"/>
+</g>
+<g class="seq-jenkins"><rect x="320" y="190" width="480" height="140" rx="10" class="box"/><text x="560" y="215" class="lbl-title" font-size="16" text-anchor="middle">Jenkins Pipeline</text></g>
+<g class="seq-j1"><rect x="336" y="232" width="108" height="50" rx="6" class="chip"/><text x="390.0" y="252" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="390.0" dy="0">Repo</tspan><tspan x="390.0" dy="13">Checkout</tspan></text></g>
+<g class="seq-j2"><rect x="452" y="232" width="108" height="50" rx="6" class="chip"/><text x="506.0" y="252" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="506.0" dy="0">Running</tspan><tspan x="506.0" dy="13">Test</tspan></text></g>
+<g class="seq-j3"><rect x="568" y="232" width="108" height="50" rx="6" class="chip"/><text x="622.0" y="252" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="622.0" dy="0">Build</tspan><tspan x="622.0" dy="13">App</tspan></text></g>
+<g class="seq-j4"><rect x="684" y="232" width="108" height="50" rx="6" class="chip"/><text x="738.0" y="252" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="738.0" dy="0">Sonarqube</tspan><tspan x="738.0" dy="13">Analysis</tspan></text></g>
+<g class="seq-j5"><rect x="336" y="290" width="108" height="50" rx="6" class="chip"/><text x="390.0" y="310" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="390.0" dy="0">Build &amp; Push</tspan><tspan x="390.0" dy="13">Docker Image</tspan></text></g>
+<g class="seq-j6"><rect x="452" y="290" width="108" height="50" rx="6" class="chip"/><text x="506.0" y="310" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="506.0" dy="0">Edit Helm</tspan><tspan x="506.0" dy="13">Values</tspan></text></g>
+<g class="seq-j7"><rect x="568" y="290" width="108" height="50" rx="6" class="chip"/><text x="622.0" y="310" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="622.0" dy="0">Deploy</tspan><tspan x="622.0" dy="13">on AKS</tspan></text></g>
+<g class="seq-j8"><rect x="684" y="290" width="108" height="50" rx="6" class="chip"/><text x="738.0" y="310" class="lbl-sm" text-anchor="middle" font-size="11"><tspan x="738.0" dy="0">Deploy</tspan><tspan x="738.0" dy="13">Monitoring</tspan></text></g>
+<g class="seq-arrow_jenkins_docker">
+<line x1="800" y1="260" x2="858" y2="260" stroke="#fbbf24" class="arrow"/>
+<line x1="858" y1="260" x2="848.8" y2="263.9" stroke="#fbbf24" stroke-width="2.5"/>
+<line x1="858" y1="260" x2="848.8" y2="256.1" stroke="#fbbf24" stroke-width="2.5"/>
+</g>
+<g class="seq-docker"><rect x="860" y="220" width="200" height="70" rx="10" class="box"/><text x="960" y="250" class="lbl-title" font-size="16" text-anchor="middle">Docker Hub</text><text x="960" y="273" class="lbl-sm" font-size="11" text-anchor="middle">marwantarek11/microservice-app</text></g>
+<g class="seq-arrow_docker_helm">
+<line x1="1060" y1="255" x2="1118" y2="255" stroke="#fbbf24" class="arrow"/>
+<line x1="1118" y1="255" x2="1108.8" y2="258.9" stroke="#fbbf24" stroke-width="2.5"/>
+<line x1="1118" y1="255" x2="1108.8" y2="251.1" stroke="#fbbf24" stroke-width="2.5"/>
+</g>
+<g class="seq-helm"><rect x="1120" y="220" width="160" height="70" rx="10" class="box"/><text x="1200" y="250" class="lbl-title" font-size="16" text-anchor="middle">Helm</text><text x="1200" y="273" class="lbl-sm" font-size="14" text-anchor="middle">upgrade --install</text></g>
+<g class="seq-arrow_helm_aks">
+<line x1="1280" y1="255" x2="1470" y2="255" stroke="#a78bfa" class="arrow"/>
+<line x1="1470" y1="255" x2="1460.8" y2="258.9" stroke="#a78bfa" stroke-width="2.5"/>
+<line x1="1470" y1="255" x2="1460.8" y2="251.1" stroke="#a78bfa" stroke-width="2.5"/>
+</g>
+<g class="seq-aksapp"><rect x="1470" y="140" width="280" height="240" rx="10" class="box"/><text x="1610" y="170" class="lbl-title" font-size="16" text-anchor="middle">AKS Cluster</text><text x="1610" y="192" class="lbl-sm" font-size="11" text-anchor="middle">K8s 1.33.3 · Standard_B2s · Free tier</text><rect x="1490" y="215" width="240" height="70" rx="8" class="chip"/><text x="1610" y="240" class="lbl" font-size="13" text-anchor="middle">Flask App</text><text x="1610" y="258" class="lbl-sm" font-size="11" text-anchor="middle">replicas: 1 · 100m / 128Mi</text><rect x="1490" y="300" width="240" height="60" rx="8" class="chip"/><text x="1610" y="322" class="lbl-sm" font-size="11" text-anchor="middle">/health · /metrics</text><text x="1610" y="340" class="lbl-sm" font-size="11" text-anchor="middle">LoadBalancer :5000</text></g>
+<g class="seq-arrow_aks_sm">
+<line x1="1610" y1="380" x2="1610" y2="428" stroke="#a78bfa" class="arrow"/>
+<line x1="1610" y1="428" x2="1606.1" y2="418.8" stroke="#a78bfa" stroke-width="2.5"/>
+<line x1="1610" y1="428" x2="1613.9" y2="418.8" stroke="#a78bfa" stroke-width="2.5"/>
+</g>
+<g class="seq-sm"><rect x="1470" y="430" width="280" height="55" rx="10" class="box"/><text x="1610" y="453" class="lbl-title" font-size="14" text-anchor="middle">ServiceMonitor</text><text x="1610" y="472" class="lbl-sm" font-size="11" text-anchor="middle">scrapes /metrics every 30s</text></g>
+<g class="seq-arrow_sm_prom">
+<line x1="1470" y1="460" x2="1290" y2="555" stroke="#f472b6" class="arrow"/>
+<line x1="1290" y1="555" x2="1296.3" y2="547.3" stroke="#f472b6" stroke-width="2.5"/>
+<line x1="1290" y1="555" x2="1300.0" y2="554.1" stroke="#f472b6" stroke-width="2.5"/>
+</g>
+<g class="seq-prom"><rect x="1160" y="545" width="190" height="75" rx="10" class="box"/><text x="1255" y="573" class="lbl-title" font-size="15" text-anchor="middle">Prometheus</text><text x="1255" y="595" class="lbl-sm" font-size="11" text-anchor="middle">30d retention · 50Gi PVC</text></g>
+<g class="seq-arrow_prom_graf">
+<line x1="1350" y1="570" x2="1428" y2="570" stroke="#f472b6" class="arrow"/>
+<line x1="1428" y1="570" x2="1418.8" y2="573.9" stroke="#f472b6" stroke-width="2.5"/>
+<line x1="1428" y1="570" x2="1418.8" y2="566.1" stroke="#f472b6" stroke-width="2.5"/>
+</g>
+<g class="seq-graf"><rect x="1430" y="545" width="190" height="75" rx="10" class="box"/><text x="1525" y="573" class="lbl-title" font-size="15" text-anchor="middle">Grafana</text><text x="1525" y="595" class="lbl-sm" font-size="14" text-anchor="middle">dashboards</text></g>
+<g class="seq-arrow_prom_alert">
+<line x1="1255" y1="620" x2="1255" y2="660" stroke="#f472b6" class="arrow"/>
+<line x1="1255" y1="660" x2="1251.1" y2="650.8" stroke="#f472b6" stroke-width="2.5"/>
+<line x1="1255" y1="660" x2="1258.9" y2="650.8" stroke="#f472b6" stroke-width="2.5"/>
+</g>
+<g class="seq-alert"><rect x="1160" y="662" width="190" height="75" rx="10" class="box"/><text x="1255" y="690" class="lbl-title" font-size="15" text-anchor="middle">Alertmanager</text><text x="1255" y="712" class="lbl-sm" font-size="14" text-anchor="middle">alert routing</text></g>
+<text x="80" y="770" class="lbl-title" font-size="15">End-to-End Pipeline: Azure-K8s-Terraform-Docker-CICD-Monitoring</text>
+<text x="80" y="792" class="lbl-sm" font-size="12">Every value shown is read from this repo's own Jenkinsfile, terraform.tfvars, helm-chart/values.yaml, servicemonitor.yaml and monitoring/values.yaml.</text>
+</svg>
